@@ -10,7 +10,7 @@ class App extends Component {
           <h1>Front End Developer</h1>
         </div>
         <p className="App-intro">
-          <h1 style={{fontWeight:'100'}}>CLOUD FARE</h1>
+          <h1 style={{fontWeight:'100'}}>Vikram Belde</h1>
         </p>
       </div>
     );
