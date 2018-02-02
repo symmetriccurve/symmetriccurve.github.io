@@ -13700,9 +13700,9 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             _Tabs2.default,
             { value: value, onChange: this.handleChange },
-            _react2.default.createElement(_Tabs.Tab, { label: 'Item One' }),
-            _react2.default.createElement(_Tabs.Tab, { label: 'Item Two' }),
-            _react2.default.createElement(_Tabs.Tab, { label: 'Item Three' })
+            _react2.default.createElement(_Tabs.Tab, { label: 'About Me' }),
+            _react2.default.createElement(_Tabs.Tab, { label: 'Projects' }),
+            _react2.default.createElement(_Tabs.Tab, { label: 'Contact' })
           )
         ),
         value === 0 && _react2.default.createElement(
@@ -13785,16 +13785,16 @@ function PaperSheet(props) {
     null,
     _react2.default.createElement(
       _Paper2.default,
-      { className: classes.root, elevation: 4 },
+      { className: classes.root, elevation: 2 },
       _react2.default.createElement(
         _Typography2.default,
         { type: 'headline', component: 'h3' },
-        'This is a sheet of paper.'
+        'This is Vikram Belde.'
       ),
       _react2.default.createElement(
         _Typography2.default,
-        { component: 'p' },
-        'Paper can be used to build surface or other elements for your application.'
+        { component: 'h2', type: 'headline' },
+        'a Common Javascipt Developer with love for React EcoSystem !'
       )
     )
   );
