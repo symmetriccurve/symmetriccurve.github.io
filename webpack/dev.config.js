@@ -14,6 +14,17 @@ module.exports = merge(baseConfig(), {
 	module: {
 		rules: [
 			{
+				test: /\.html$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+						}
+					}
+				]
+			},
+			{
 				test: /\.css$/,
 				//exclude: /node_modules/,
 				use: [

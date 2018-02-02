@@ -9146,8 +9146,12 @@ var App = function (_Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				null,
-				' This is a React App '
+				{ style: { display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'coral', height: '100vh', width: '100%' } },
+				_react2.default.createElement(
+					'h1',
+					null,
+					' Vikram Belde'
+				)
 			);
 		}
 	}]);
