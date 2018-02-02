@@ -2,7 +2,7 @@ const baseConfig = require('./base.config.js')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const path = require('path')
-const staticsPath = path.join(__dirname, '../static')
+const staticsPath = path.join(__dirname, '../')
 
 module.exports = merge(baseConfig(), {
 	output: {
@@ -17,6 +17,17 @@ module.exports = merge(baseConfig(), {
 				use: [
 					'style-loader',
 					'css-loader'
+				]
+			},
+			{
+				test: /\.html$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+						}
+					}
 				]
 			},
 			{
