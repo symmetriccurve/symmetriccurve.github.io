@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -10,6 +11,9 @@ const styles = theme => ({
     //paddingBottom: 16,
     //marginTop: theme.spacing.unit * 3,
   }),
+  button: {
+   margin: theme.spacing.unit,
+ }
 });
 
 function PaperSheet(props) {
@@ -23,6 +27,9 @@ function PaperSheet(props) {
         <Typography component="h2" type="headline">
           a Common Javascipt Developer with love for React EcoSystem !
         </Typography>
+        <Button raised color="primary" className={classes.button}>
+            Read More
+        </Button>
       </Paper>
     </div>
   );

@@ -5,6 +5,7 @@ import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import AboutMe from './AboutMe'
+import Projects from './posts/Getting-Started-With-React'
 //import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 function TabContainer(props) {
@@ -48,8 +49,8 @@ class App extends React.Component {
             <Tab label="Contact"/>
           </Tabs>
         </AppBar>
-        {value === 0 && <TabContainer><AboutMe/></TabContainer>}
-        {value === 1 && <TabContainer>Item Two</TabContainer>}
+        {value === 1 && <TabContainer><AboutMe/></TabContainer>}
+        {value === 0 && <TabContainer><Projects/></TabContainer>}
         {value === 2 && <TabContainer>Item Three</TabContainer>}
       </div>
     );
