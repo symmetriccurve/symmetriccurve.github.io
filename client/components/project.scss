@@ -1,0 +1,42 @@
+@import '../sass/vars.scss';
+
+.normal-text {
+    font-family: Ubuntu,Verdana, Geneva, sans-serif;
+    font-size: 15px;
+}
+
+.small-text {
+    font-family: Ubuntu,Verdana, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+.large-text {
+    font-family: Ubuntu,Verdana, Geneva, sans-serif;
+    font-size: 18px;
+}
+
+.extralarge-text {
+    font-family: Ubuntu,Verdana, Geneva, sans-serif;
+    font-size: 20px;
+}
+
+.extraExtralarge-text{
+  font-family: Ubuntu,Verdana, Geneva, sans-serif;
+  font-size: 30px;
+}
+
+.blue {
+    color: $blue;
+}
+
+.gray {
+    color: $gray;
+}
+
+.white {
+    color: $white;
+}
+
+.lightgray {
+    color: $lightgray
+}
