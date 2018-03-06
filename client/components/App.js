@@ -132,7 +132,7 @@ class App extends React.Component {
     const { value } = this.state;
     return(
       <div style={{width:'100%',background:'lightgray'}}>
-          <div style={{marginTop:'5%',marginLeft:'3%',marginRight:'3%',backgroundColor:'white'}}>
+          <div style={{padding:'5%',marginLeft:'3%',marginRight:'3%',backgroundColor:'white'}}>
             <div className='extraExtralarge-text'> VIKRAM BELDE - UI/UX Developer</div>
             {
               projects.map((eachProject)=>{
