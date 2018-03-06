@@ -13982,7 +13982,8 @@ var App = function (_React$Component) {
         role: 'UI/UX Developer',
         location: 'Texas',
         duration: 'July 2016 - Present',
-        description: 'Sensity Systems is Company by choice',
+        fewWordsAboutCompany: 'Sensity® Systems uses energy-efficient LED lighting as the foundation for its IoT platform for Smart Cities. The company enables light owners to capitalize on the LED conversion process by embedding networking technology within both retrofit and new LED luminaires. With the Sensity open, privacy-by-design, multiservice NetSense™ platform, lighting owners are able to reduce energy costs and implement a variety of Smart City applications and services, including public safety, environmental and weather monitoring, parking management and location analytics.',
+        companyLink: 'www.sensity.com',
         technologies: ['React', 'jekins'],
         responsibilities: ["Designed and Implemented Content Management System portal from the scracth", "Extensivley worked on the Elastic Search including mappings and building queries", "Created Reusable Components to share across the platform and documented the usage", "Maintained Dev, Test and Prod environments using Docker Images", "Handled Versioning of the application, releases and documented the user guide", "Extensive usage of Redux to Manage the State", "implemeted node proxy to authenticate with the backend services"]
       }, {
@@ -14214,7 +14215,7 @@ var Project = function (_React$Component) {
         { style: { padding: '2%', marginTop: '3%', boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16' } },
         _react2.default.createElement(
           'div',
-          { className: 'row', style: { padding: '2%' } },
+          { className: 'row' },
           _react2.default.createElement(
             'div',
             { className: 'col-md-8 extralarge-text' },
@@ -14235,7 +14236,7 @@ var Project = function (_React$Component) {
           'div',
           { className: 'row', style: { padding: '2%' } },
           ' ',
-          this.props.projectInfo.description,
+          this.props.projectInfo.fewWordsAboutCompany,
           ' '
         ),
         _react2.default.createElement(
