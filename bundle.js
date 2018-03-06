@@ -13978,6 +13978,7 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
       var profile = {
+        links: [{ link: 'https://github.com/symmetriccurve', label: 'Github' }, { link: 'https://www.linkedin.com/in/vikrambelde/', label: 'LinkedIn' },, { link: 'https://www.npmjs.com/~bevikram', label: 'npm' }, { link: 'https://itunes.apple.com/us/developer/vikram-belde', label: 'Apps' }, { link: 'https://github.com/symmetriccurve', label: 'Github' }],
         "firstName": "Vikram",
         "lastName": "Belde",
         "title": "UI/UX Developer",
@@ -14049,19 +14050,19 @@ var App = function (_React$Component) {
             'Enthuastic Javascript developer cutting through the technology and learning to the level of dust.'
           ),
           _react2.default.createElement(
-            'a',
-            { href: profile.linkedInProfile },
-            'LinkedIn'
-          ),
-          _react2.default.createElement(
-            'span',
-            null,
-            " | "
-          ),
-          _react2.default.createElement(
-            'a',
-            { href: profile.githubLink },
-            'Github'
+            'div',
+            { style: { display: 'flex', flexDirection: 'row' } },
+            profile.links.map(function (eachLink) {
+              return _react2.default.createElement(
+                'div',
+                { style: { paddingRight: '0.5%', paddingLeft: '0.5%' } },
+                _react2.default.createElement(
+                  'a',
+                  { href: eachLink.link },
+                  eachLink.label
+                )
+              );
+            })
           ),
           _react2.default.createElement('hr', null),
           profile.projects.map(function (eachProject) {
