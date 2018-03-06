@@ -13978,16 +13978,16 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
       var projects = [{
-        name: 'Sensity Systems',
+        name: 'Verizon - Sensity Systems (Project 2)',
         role: 'UI/UX Developer',
         location: 'Texas',
-        duration: 'July 2016 - Present',
+        duration: 'December 2017 - Present',
         fewWordsAboutCompany: 'Sensity® Systems uses energy-efficient LED lighting as the foundation for its IoT platform for Smart Cities. The company enables light owners to capitalize on the LED conversion process by embedding networking technology within both retrofit and new LED luminaires. With the Sensity open, privacy-by-design, multiservice NetSense™ platform, lighting owners are able to reduce energy costs and implement a variety of Smart City applications and services, including public safety, environmental and weather monitoring, parking management and location analytics.',
-        companyLink: 'www.sensity.com',
-        technologies: ['React', 'jekins'],
+        fewWordsAboutProject: 'CMS(Content Management System) ',
+        technologies: ['Reactjs', 'Redux', 'Webpack', 'Docker', 'Elastic Search'],
         responsibilities: ["Designed and Implemented Content Management System portal from the scracth", "Extensivley worked on the Elastic Search including mappings and building queries", "Created Reusable Components to share across the platform and documented the usage", "Maintained Dev, Test and Prod environments using Docker Images", "Handled Versioning of the application, releases and documented the user guide", "Extensive usage of Redux to Manage the State", "implemeted node proxy to authenticate with the backend services"]
       }, {
-        name: 'Sensity Systems',
+        name: 'Verizon - Sensity Systems (Project 1)',
         role: 'UI Developer',
         location: 'California',
         duration: 'January 2016 - June 2016',
@@ -14212,7 +14212,7 @@ var Project = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { padding: '2%', marginTop: '3%', boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16' } },
+        { style: { padding: '3%', marginTop: '3%', boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16' } },
         _react2.default.createElement(
           'div',
           { className: 'row' },
@@ -14234,7 +14234,7 @@ var Project = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'row', style: { padding: '2%' } },
+          { className: 'row', style: { padding: '2%', textAlign: 'justify' } },
           ' ',
           this.props.projectInfo.fewWordsAboutCompany,
           ' '
@@ -14251,6 +14251,24 @@ var Project = function (_React$Component) {
               ' '
             );
           })
+        ),
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(
+          'div',
+          { style: { margin: '1%' } },
+          _react2.default.createElement(
+            'ul',
+            { className: 'normal-text' },
+            this.props.projectInfo.technologies.map(function (eachTechnology) {
+              return _react2.default.createElement(
+                'li',
+                { style: { float: 'left', marginLeft: '2%', listStyle: 'none' } },
+                ' ',
+                eachTechnology,
+                ' '
+              );
+            })
+          )
         )
       );
     }
