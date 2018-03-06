@@ -13984,7 +13984,7 @@ var App = function (_React$Component) {
         duration: 'July 2017 - Present',
         fewWordsAboutCompany: 'Sensity® Systems uses energy-efficient LED lighting as the foundation for its IoT platform for Smart Cities. The company enables light owners to capitalize on the LED conversion process by embedding networking technology within both retrofit and new LED luminaires. With the Sensity open, privacy-by-design, multiservice NetSense™ platform, lighting owners are able to reduce energy costs and implement a variety of Smart City applications and services, including public safety, environmental and weather monitoring, parking management and location analytics.',
         fewWordsAboutProject: 'CMS(Content Management System) ',
-        technologies: ['Reactjs', 'Redux', 'Webpack', 'Docker', 'Elastic Search'],
+        technologies: ['Reactjs', 'Redux', 'Webpack', 'Docker', 'Elastic Search', 'Sass'],
         responsibilities: ["Designed and Implemented Content Management System portal from the scracth including the wireframes", "Extensivley worked on the Elastic Search including mappings and constructing queries", "Created Reusable Components to share across the CMS platform and documented the usage", "Maintained Dev, Test and Prod environments using Docker Images simultaneously deploying and maintaining the Instances", "Handled Versioning of the application, releases and documented the user guide", "Extensive usage of Redux to manage the state", "Implemeted node reverse proxy to forward UI requests to backend APIs", "Integrated ability to download the application state as a JSON file to ease bug fixing", "Implemented URL integration with Redux state and create URL from App state", "Added ability to download CSV file from user data selections", "Integrated React-Data-Grid to list the data and handle user selections", "Integrated Webpack to build and bundle the application and manage environment profiles"]
       }, {
         name: 'Verizon - Sensity Systems (Project 1)',
@@ -14011,12 +14011,12 @@ var App = function (_React$Component) {
         technologies: ['iOS', 'jekins'],
         responsibilities: ['Develop and maintain an employee management iOS app', 'Add additional functionalities like secure login(oauth) and push notification.', 'Integration with third-party user authentication and login (linkedin, google) Enhance UI and fix issues with multiple device compatibility', 'Document the development process and steps to set-up the environment']
       }, {
-        name: 'Manpower Solutions',
+        name: 'ManpowerGroup Solutions',
         role: 'Web Developer',
         location: 'India',
         duration: 'April 2013 - December 2013',
-        fewWordsAboutCompany: 'Sensity Systems is Company by choice Sensity Systems is Company by choiceSensity Systems is Company by choiceSensity Systems is Company by choice',
-        technologies: ['React', 'jekins'],
+        fewWordsAboutCompany: 'ManpowerGroup offers a full range of solutions to power business strategy. With unparalleled expertise and breadth of offerings, ManpowerGroup Solutions/TAPFIN optimizes total talent management across your entire workforce to deliver measurable results and business success.',
+        technologies: ['HTML', 'jQuery', 'Bootstrap', 'CSS'],
         responsibilities: ['Designed and developed employee portal from the scratch', 'Implemented functionalities to add/update/Delete employee documents online', 'Added functionality to download employee records in multiple formats(PDF/doc)', 'Implemented ability to upload CSV files and populate the forms on the portal Added widgets to ease the employee login and logout procedures']
       }];
       var classes = this.props.classes;
