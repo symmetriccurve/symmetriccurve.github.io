@@ -14219,8 +14219,52 @@ var Project = function (_React$Component) {
   }
 
   _createClass(Project, [{
+    key: 'getFormattedText',
+    value: function getFormattedText(inputText) {
+      var formattedArray = inputText.split(" ");
+      return _react2.default.createElement(
+        'div',
+        null,
+        formattedArray.map(function (eachItem, i) {
+          if (['NodeJs', 'Redux', 'React'].indexOf(eachItem) > -1) {
+            return _react2.default.createElement(
+              'span',
+              { key: eachItem + i },
+              _react2.default.createElement(
+                'strong',
+                null,
+                ' ' + eachItem
+              )
+            );
+          } else {
+            return _react2.default.createElement(
+              'span',
+              { key: eachItem + i },
+              ' ' + eachItem
+            );
+          }
+        })
+      );
+      // const formattedArray = inputText.split(" ")
+      // return (
+      //     <div>
+      //       {
+      //         formattedArray.map(eachItem=>{
+      //           if(eachItem == 'adada'){
+      //             return <span><strong>eachItem</strong></span>
+      //           }else {
+      //             <span key={eachItem}>eachItem</span>
+      //           }
+      //         })
+      //       }
+      //     </div>
+      // )
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         { style: { padding: '2%', marginTop: '3%', boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16' } },
@@ -14246,9 +14290,7 @@ var Project = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'row', style: { padding: '2%', textAlign: 'justify' } },
-          ' ',
-          this.props.projectInfo.fewWordsAboutCompany,
-          ' '
+          this.getFormattedText(this.props.projectInfo.fewWordsAboutCompany)
         ),
         _react2.default.createElement(
           'ul',
@@ -14258,7 +14300,7 @@ var Project = function (_React$Component) {
               'li',
               null,
               ' ',
-              eacjResponsibility,
+              _this2.getFormattedText(eacjResponsibility),
               ' '
             );
           })
@@ -20357,9 +20399,11 @@ function debounce(func, wait, options) {
   function remainingWait(time) {
     var timeSinceLastCall = time - lastCallTime,
         timeSinceLastInvoke = time - lastInvokeTime,
-        result = wait - timeSinceLastCall;
+        timeWaiting = wait - timeSinceLastCall;
 
-    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+    return maxing
+      ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke)
+      : timeWaiting;
   }
 
   function shouldInvoke(time) {
