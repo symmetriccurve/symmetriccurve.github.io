@@ -14026,7 +14026,7 @@ var App = function (_React$Component) {
         { style: { width: '100%', background: 'lightgray' } },
         _react2.default.createElement(
           'div',
-          { style: { marginTop: '5%', marginLeft: '3%', marginRight: '3%', backgroundColor: 'white' } },
+          { style: { padding: '5%', marginLeft: '3%', marginRight: '3%', backgroundColor: 'white' } },
           _react2.default.createElement(
             'div',
             { className: 'extraExtralarge-text' },
@@ -14211,10 +14211,10 @@ var Project = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { style: { marginTop: '2%', marginLeft: '2%', marginRight: '2%', marginBottom: '2%', boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16' } },
+        { style: { padding: '2%', marginTop: '3%', boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16' } },
         _react2.default.createElement(
           'div',
-          { className: 'row' },
+          { className: 'row', style: { padding: '2%' } },
           _react2.default.createElement(
             'div',
             { className: 'col-md-8 extralarge-text' },
@@ -14235,7 +14235,7 @@ var Project = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'row' },
+          { className: 'row', style: { padding: '2%' } },
           ' ',
           this.props.projectInfo.description,
           ' '
