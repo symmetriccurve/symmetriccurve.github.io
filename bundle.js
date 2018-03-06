@@ -14222,9 +14222,7 @@ var Project = function (_React$Component) {
               'div',
               { className: 'row' },
               ' ',
-              this.props.projectInfo.name,
-              '  ',
-              this.props.projectInfo.location
+              this.props.projectInfo.name + ' - ' + this.props.projectInfo.location
             )
           ),
           _react2.default.createElement(
