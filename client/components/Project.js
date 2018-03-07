@@ -41,7 +41,7 @@ class Project extends React.Component {
             <div className='row'> {this.props.projectInfo.name + ' - ' + this.props.projectInfo.location}</div>
           </div>
           <div className='col-md-4 large-text'>
-            {this.props.projectInfo.duration}
+            {this.props.projectInfo.timeFrame}
           </div>
         </div>
         <div className='row' style={{padding:'2%',textAlign:'justify'}}>
@@ -49,8 +49,17 @@ class Project extends React.Component {
         </div>
           <ul className='normal-text'>
             {
-              this.props.projectInfo.responsibilities.map((eacjResponsibility)=>{
-                return <li> {this.getFormattedText(eacjResponsibility)} </li>
+              this.props.projectInfo.projects.map(eachProject=>{
+                return(
+                  <div className='col-md-8' style={{marginTop:'1%'}}>
+                    <div className='row large-text'> {eachProject.projectName + ' - ' + eachProject.location}</div>
+                    {
+                      eachProject.responsibilities.map((eachResponsibility)=>{
+                        return <li>{this.getFormattedText(eachResponsibility)}</li>
+                      })
+                    }
+                  </div>
+                )
               })
             }
           </ul>
@@ -58,7 +67,7 @@ class Project extends React.Component {
           <div style={{padding:'2px'}}>
             <ul className='normal-text'>
               {
-                this.props.projectInfo.technologies.map((eachTechnology)=>{
+                [].map((eachTechnology)=>{
                   return <li style={{float:'left',marginLeft:'2%',listStyle:'none'}}> {eachTechnology} </li>
                 })
               }

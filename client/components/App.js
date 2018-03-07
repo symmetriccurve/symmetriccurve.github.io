@@ -32,15 +32,36 @@ const styles = theme => ({
 class App extends React.Component {
   state = {
     value: 3,
+    response: ''
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
+  componentDidMount(){
+    fetch('https://portfolio-18e3f.firebaseio.com/portfolio.json')
+    .then(res=>res.json())
+    .then(resJson=>{
+      this.setState({
+        response: resJson
+      })
+    })
+    .catch(error=>{
+      console.log("error",error);
+    })
+  }
+
   render() {
-    var projects = [
-      {
+    var profile = {
+      links:[{link:'https://github.com/symmetriccurve',label:'Github'},{link:'https://www.linkedin.com/in/vikrambelde/',label:'LinkedIn'},,{link:'https://www.npmjs.com/~bevikram',label:'npm'},{link:'https://itunes.apple.com/us/developer/vikram-belde',label:'Apps'},{link:'https://github.com/symmetriccurve',label:'Github'}],
+      "firstName": "Vikram",
+      "lastName":"Belde",
+      "title": "UI/UX Developer",
+      "githubLink":"https://github.com/symmetriccurve",
+      "linkedInProfile":"https://www.linkedin.com/in/vikrambelde/",
+      "aboutMe":"Enthuastic Javascript developer cutting through the technology and learning to the level of dust.",
+      "projects": [{
         name: 'Verizon - Sensity Systems (Project 2)',
         role: 'UI/UX Developer',
         location: 'Texas',
@@ -61,7 +82,17 @@ class App extends React.Component {
           "Added ability to download CSV file from user data selections",
           "Integrated React-Data-Grid to list the data and handle user selections",
           "Integrated Webpack to build and bundle the application and manage environment profiles"
-        ]
+        ],
+        projects: [{
+          role: 'UX Developer',
+          projectName: '',
+          responsibilities: [
+              "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ],
+          achievements: [
+            "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ]
+        }]
       },
       {
         name: 'Verizon - Sensity Systems (Project 1)',
@@ -82,7 +113,17 @@ class App extends React.Component {
           'Developed and integrated functional test cases to test the user flows using protractor and generated test reports on each code push.',
           'Introduced many third-party tools to increased the developer experience. Migrated bower components to respective npm modules effectively decrease the size of the code base',
           'Introduced yarn to decrease the build time of the app and added ability to install modules in an isolated environment'
-        ]
+        ],
+        projects: [{
+          role: 'UX Developer',
+          projectName: '',
+          responsibilities: [
+              "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ],
+          achievements: [
+            "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ]
+        }]
       },
       {
         name: 'Verizon Wireless',
@@ -103,7 +144,17 @@ class App extends React.Component {
           'Implemented Flux and Redux architecture to maintain state of the Applications Worked on apps namely iPair- Pairing IOT devices, CoHo – Control Home , CityWise – Control City wide IOT devices and AgTech – Control Agricultural Devices.',
           'Integrated live video stream using react-native- video for iOS platform and handled error cases.',
           'Collaborated with design team, QAs, scrum master and product owner to implement enhancements or new applications during daily stand-ups, sprint planning and sprint retrospectives.'
-        ]
+        ],
+        projects: [{
+          role: 'UX Developer',
+          projectName: '',
+          responsibilities: [
+              "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ],
+          achievements: [
+            "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ]
+        }]
       },
       {
         name: 'BM Tech Solutions',
@@ -113,10 +164,32 @@ class App extends React.Component {
         fewWordsAboutCompany: 'BM Tech Solutions is a technology and IT consulting firm and specialize in providing cost effective IT Solutions to  variety of customers. BM Tech Solutions is ready to assists in every phase of the project lifecycle from planning through execution as well as providing on-going support',
         technologies: ['iOS', 'jekins'],
         responsibilities: [
-        'Develop and maintain an employee management iOS app',
-        'Add additional functionalities like secure login(oauth) and push notification.',
-        'Integration with third-party user authentication and login (linkedin, google) Enhance UI and fix issues with multiple device compatibility',
-        'Document the development process and steps to set-up the environment'
+          'Develop and maintain an employee management iOS app',
+          'Add additional functionalities like secure login(oauth) and push notification.',
+          'Integration with third-party user authentication and login (linkedin, google) Enhance UI and fix issues with multiple device compatibility',
+          'Document the development process and steps to set-up the environment'
+        ],
+        projects: [
+          {
+            role: 'UX Developer',
+            projectName: '',
+            responsibilities: [
+                "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+            ],
+            achievements: [
+              "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+            ]
+          },
+          {
+            role: 'UX Developer',
+            projectName: '',
+            responsibilities: [
+                "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+            ],
+            achievements: [
+              "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+            ]
+          }
         ]
       },
       {
@@ -131,20 +204,44 @@ class App extends React.Component {
           'Implemented functionalities to add/update/Delete employee documents online',
           'Added functionality to download employee records in multiple formats(PDF/doc)',
           'Implemented ability to upload CSV files and populate the forms on the portal Added widgets to ease the employee login and logout procedures'
-        ]
+        ],
+        projects: [{
+          role: 'UX Developer',
+          projectName: '',
+          responsibilities: [
+              "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ],
+          achievements: [
+            "Respons 2","Respons 4",,"Respons 5",,"Respons 6",,"Respons 7",
+          ]
+        }]
       }
     ]
+  }
     const { classes } = this.props;
     const { value } = this.state;
+    const response = this.state.response
+    if(response == '') return <div/>
     return(
       <div style={{width:'100%',background:'lightgray'}}>
           <div style={{padding:'5%',marginLeft:'3%',marginRight:'3%',backgroundColor:'white'}}>
             <hr/>
-              <div className='extraExtralarge-text'> VIKRAM BELDE - UI/UX Developer</div>
-              <div className='large-text'>Enthuastic Javascript developer cutting through the technology and learning to the level of dust.</div>
+              <div className='extraExtralarge-text'> {response.firstName.toUpperCase() + ' '+ response.lastName.toUpperCase()  + ' - ' + response.title}</div>
+              <div className='large-text'>{response.aboutMe}</div>
+              <div style={{display:'flex',flexDirection:'row'}}>
+                {
+                  response.links.map(eachLink=>{
+                    return (
+                      <div style={{paddingRight:'0.5%',paddingLeft:'0.5%'}}>
+                        <a href={eachLink.link}>{eachLink.label}</a>
+                      </div>
+                    )
+                  })
+                }
+              </div>
             <hr/>
             {
-              projects.map((eachProject)=>{
+              response.projects.map((eachProject)=>{
                 return (
                   <div>
                       <Project projectInfo={eachProject}/>
