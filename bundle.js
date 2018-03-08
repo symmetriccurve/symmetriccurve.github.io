@@ -14036,7 +14036,7 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
               'div',
               null,
-              _react2.default.createElement(_Project2.default, { projectInfo: eachProject })
+              _react2.default.createElement(_Project2.default, { projectInfo: eachProject, toBeBolded: response.toBeBolded })
             );
           })
         )
@@ -14201,6 +14201,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var toBeBolded = ['NodeJs', 'Redux', 'React'];
+
 var Project = function (_React$Component) {
   _inherits(Project, _React$Component);
 
@@ -14213,12 +14215,14 @@ var Project = function (_React$Component) {
   _createClass(Project, [{
     key: 'getFormattedText',
     value: function getFormattedText(inputText) {
+      var _this2 = this;
+
       var formattedArray = inputText.split(" ");
       return _react2.default.createElement(
         'div',
         null,
         formattedArray.map(function (eachItem, i) {
-          if (['NodeJs', 'Redux', 'React'].indexOf(eachItem) > -1) {
+          if (_this2.props.toBeBolded.indexOf(eachItem) > -1) {
             return _react2.default.createElement(
               'span',
               { key: eachItem + i },
@@ -14255,7 +14259,7 @@ var Project = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _react2.default.createElement(
         'div',
@@ -14301,7 +14305,7 @@ var Project = function (_React$Component) {
                 return _react2.default.createElement(
                   'li',
                   null,
-                  _this2.getFormattedText(eachResponsibility)
+                  _this3.getFormattedText(eachResponsibility)
                 );
               })
             );
