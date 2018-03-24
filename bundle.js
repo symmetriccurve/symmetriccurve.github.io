@@ -13858,6 +13858,46 @@ var App = function (_React$Component) {
       });
     }
   }, {
+    key: 'getFormattedText',
+    value: function getFormattedText(inputText) {
+      var formattedArray = inputText.split(" ");
+      return _react2.default.createElement(
+        'div',
+        null,
+        formattedArray.map(function (eachItem, i) {
+          if (eachItem.slice(0, 4) == "http") {
+            debugger;
+            var linkANDText = eachItem.split("*");
+            return _react2.default.createElement(
+              'a',
+              { href: linkANDText[0], key: eachItem + i },
+              linkANDText[1]
+            );
+          } else {
+            return _react2.default.createElement(
+              'span',
+              { key: eachItem + i },
+              ' ' + eachItem
+            );
+          }
+        })
+      );
+      // const formattedArray = inputText.split(" ")
+      // return (
+      //     <div>
+      //       {
+      //         formattedArray.map(eachItem=>{
+      //           if(eachItem == 'adada'){
+      //             return <span><strong>eachItem</strong></span>
+      //           }else {
+      //             <span key={eachItem}>eachItem</span>
+      //           }
+      //         })
+      //       }
+      //     </div>
+      // )
+    }
+  }, {
     key: 'handleAddQuestion',
     value: function handleAddQuestion() {
       var questions = this.state.questions;
@@ -13943,7 +13983,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 null,
-                eachQuestion.answer
+                _this3.getFormattedText(eachQuestion.answer)
               ),
               _react2.default.createElement(
                 'div',
