@@ -13866,7 +13866,6 @@ var App = function (_React$Component) {
         null,
         formattedArray.map(function (eachItem, i) {
           if (eachItem.slice(0, 4) == "http") {
-            debugger;
             var linkANDText = eachItem.split("*");
             return _react2.default.createElement(
               'a',
@@ -13985,45 +13984,9 @@ var App = function (_React$Component) {
                 null,
                 _this3.getFormattedText(eachQuestion.answer)
               ),
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                  'button',
-                  { onClick: function onClick() {
-                      _this3.handleEdit(index);
-                    } },
-                  'Edit'
-                )
-              )
+              _react2.default.createElement('div', null)
             );
-          }),
-          _react2.default.createElement(
-            'div',
-            { style: { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' } },
-            _react2.default.createElement(
-              'div',
-              { className: 'm-t-2' },
-              _react2.default.createElement(
-                'button',
-                { onClick: function onClick() {
-                    _this3.handleAddQuestion();
-                  } },
-                'Add another Question'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'm-t-2' },
-              _react2.default.createElement(
-                'button',
-                { onClick: function onClick() {
-                    _this3.handlePostToAPI();
-                  } },
-                'Post'
-              )
-            )
-          )
+          })
         )
       );
     }
@@ -23210,33 +23173,7 @@ var App = function (_React$Component) {
                 )
               )
             );
-          }),
-          _react2.default.createElement(
-            'div',
-            { style: { width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' } },
-            _react2.default.createElement(
-              'div',
-              { className: 'm-t-2' },
-              _react2.default.createElement(
-                'button',
-                { onClick: function onClick() {
-                    _this3.handleAddQuestion();
-                  } },
-                'Add another Question'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'm-t-2' },
-              _react2.default.createElement(
-                'button',
-                { onClick: function onClick() {
-                    _this3.handlePostToAPI();
-                  } },
-                'Post'
-              )
-            )
-          )
+          })
         )
       );
     }
