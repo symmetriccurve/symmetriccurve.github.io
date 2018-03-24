@@ -8,13 +8,6 @@ import AboutMe from './AboutMe'
 import Resume from './Resume'
 import Projects from './posts/Getting-Started-With-React'
 import Project from './Project'
-import TagComponent from './TagComponent'
-import Questions from './Questions'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 //import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 function TabContainer(props) {
@@ -65,8 +58,8 @@ class App extends React.Component {
     const response = this.state.response
     if(response == '') return <div/>
     return(
-      <div style={{width:'100%',background:'white'}}>
-          <div style={{paddingLeft:'5%',paddingRight:'5%',marginLeft:'3%',marginRight:'3%',backgroundColor:'white'}}>
+      <div style={{width:'100%',background:'lightgray'}}>
+          <div style={{padding:'5%',marginLeft:'3%',marginRight:'3%',backgroundColor:'white'}}>
             <hr/>
               <div className='extraExtralarge-text'>
                 <div className='typewriter'>

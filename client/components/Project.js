@@ -1,5 +1,13 @@
-import React from 'react';
-class Project extends React.Component {
+import React from 'react'
+const toBeBolded = ['NodeJs','Redux','React']
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+class Project extends React.Component{
 
   getFormattedText(inputText){
     const formattedArray = inputText.split(" ")
@@ -7,7 +15,7 @@ class Project extends React.Component {
           <div>
           {
             formattedArray.map((eachItem,i)=>{
-              if(['NodeJs','Redux','React'].indexOf(eachItem) > -1){
+              if(this.props.toBeBolded.indexOf(eachItem) > -1){
                 return <span key={eachItem+i}><strong>{' ' + eachItem}</strong></span>
               }else {
                 return <span key={eachItem+i}>{' ' + eachItem}</span>
@@ -51,13 +59,19 @@ class Project extends React.Component {
             {
               this.props.projectInfo.projects.map(eachProject=>{
                 return(
-                  <div className='col-md-8' style={{marginTop:'1%'}}>
-                    <div className='row large-text'> {eachProject.projectName + ' - ' + eachProject.location}</div>
-                    {
-                      eachProject.responsibilities.map((eachResponsibility)=>{
-                        return <li>{this.getFormattedText(eachResponsibility)}</li>
-                      })
-                    }
+                  <div className='col-md-12' style={{marginTop:'1%'}}>
+                    <hr/>
+                    <div className='row large-text'>{eachProject.projectName + ' - ' + eachProject.location}</div>
+                      <div style={{marginLeft:'2%',marginTop:'0.5%'}} className='lightgray'>
+                        {eachProject.fewWordsAboutProject}
+                      </div>
+                      <div style={{marginLeft:'5%',marginTop:'0.5%'}}>
+                        {
+                          eachProject.responsibilities.map((eachResponsibility)=>{
+                            return <li>{this.getFormattedText(eachResponsibility)}</li>
+                          })
+                        }
+                      </div>
                   </div>
                 )
               })
