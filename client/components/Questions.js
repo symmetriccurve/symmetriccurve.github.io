@@ -69,6 +69,39 @@ class App extends React.Component {
     })
   }
 
+  getFormattedText(inputText){
+    const formattedArray = inputText.split(" ")
+        return(
+          <div>
+          {
+            formattedArray.map((eachItem,i)=>{
+              if(eachItem.slice(0,4) == "http"){
+                const linkANDText = eachItem.split("*")
+                return <a href={linkANDText[0]} key={eachItem+i}>{linkANDText[1]}</a>
+              }else {
+                return <span key={eachItem+i}>{' ' + eachItem}</span>
+              }
+            })
+          }
+          </div>
+        )
+    // const formattedArray = inputText.split(" ")
+    // return (
+    //     <div>
+    //       {
+    //         formattedArray.map(eachItem=>{
+    //           if(eachItem == 'adada'){
+    //             return <span><strong>eachItem</strong></span>
+    //           }else {
+    //             <span key={eachItem}>eachItem</span>
+    //           }
+    //         })
+    //       }
+    //     </div>
+    // )
+
+  }
+
   handleAddQuestion(){
     let questions = this.state.questions
     questions.push({question:'your question goes here',answer:'your answer here',isEditing:true})
@@ -111,23 +144,23 @@ class App extends React.Component {
                 </div>
                 <span className='large-text'>Answer</span>
                 <div>
-                  {eachQuestion.answer}
+                  {this.getFormattedText(eachQuestion.answer)}
                 </div>
                 <div>
-                  <button onClick={()=>{this.handleEdit(index)}}>Edit</button>
+                  {/* <button onClick={()=>{this.handleEdit(index)}}>Edit</button> */}
                 </div>
               </div>
             )
           })
         }
-        <div style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
-          <div className='m-t-2'>
-            <button onClick={()=>{this.handleAddQuestion()}}>Add another Question</button>
-          </div>
-          <div className='m-t-2'>
-            <button onClick={()=>{this.handlePostToAPI()}}>Post</button>
-          </div>
-        </div>
+        {/*<div style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
+            <div className='m-t-2'>
+              <button onClick={()=>{this.handleAddQuestion()}}>Add another Question</button>
+            </div>
+            <div className='m-t-2'>
+              <button onClick={()=>{this.handlePostToAPI()}}>Post</button>
+            </div>
+          </div>*/}
       </div>
       </div>
     );
