@@ -6,7 +6,7 @@ const staticsPath = path.join(__dirname, '../')
 
 module.exports = merge(baseConfig(), {
 	output: {
-		path: '/',
+		path: staticsPath,
 		filename: 'bundle.js',
 	},
 	module: {
