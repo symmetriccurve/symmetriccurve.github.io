@@ -4,6 +4,7 @@ require("./index.html")
 import App from './components/App'
 import Questions from './components/Questions'
 import Blog from './components/Blog'
+import QuestionDetailCard from './components/QuestionDetailCard'
 require('./sass/main.scss')
 // import {
 //   BrowserRouter as Router,
@@ -31,7 +32,8 @@ ReactDOM.render(
       </div>
       <Route exact path="/" component={App}/>
       <Route path="/interviewQuestions" component={Questions}/>
-      <Route path="/blog" component={Blog}/>
+      <Route path="/blog" component={Blog} />
+      <Route path ={'/moreinfo/:id'} component={QuestionDetailCard}></Route>
     </div>
   </HashRouter>
 </div>,

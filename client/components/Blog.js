@@ -6,6 +6,11 @@ import { Card } from 'antd';
 var HtmlToReactParser = require('html-to-react').Parser;
 var htmlToReactParser = new HtmlToReactParser();
 var _ = require('lodash')
+import {
+  HashRouter,
+  Route,
+  Link
+} from 'react-router-dom'
 class App extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -21,7 +26,6 @@ class App extends React.Component {
     fetch('https://portfolio-18e3f.firebaseio.com/questions.json')
     .then((res)=>res.json())
     .then((resJSON)=>{
-      debugger
       this.setState({
           questions: _.values(resJSON)
       })
@@ -83,66 +87,25 @@ class App extends React.Component {
   }
 
   render() {
-
+    console.log(this.state.questions)
     return (
       <div style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
         <div style={{width:'90%'}}>
         {
-          this.state.questions.map((eachQuestion,index)=>{
-            if(eachQuestion.isEditing){
+            this.state.questions.map((eachQuestion,index)=>{
               return(
-                <div style={{marginTop:'20px',marginBottom:'20px',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16'}}>
-                  <hr/>
-                  <span className='large-text'>Question</span>
-                  <div>
-                    <textarea style={{width:'1000px'}} value={eachQuestion.question} onChange={(e)=>{this.handleQuestionInput(e,index)}}/>
-                  </div>
-                  <span className='large-text'>Answer</span>
-                  <div>
-                    <textarea style={{width:'1000px',height:'200px'}} value={eachQuestion.answer} onChange={(e)=>{this.handleAnswerInput(e,index)}}/>
-                  </div>
-                  <div>
-                     <button onClick={()=>{this.handleDone(index)}}>Done</button>
-                  </div>
-                  <hr/>
+                <div style={{paddingTop:'20px',paddingBottom:'20px',marginTop:'30px',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16'}}>
+                    <Card>
+                          { htmlToReactParser.parse(eachQuestion.htmlMarkUp) }
+                    </Card>
+                    <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to={"/moreinfo/"+eachQuestion.id} params={{ id: eachQuestion.id }}>More Info</Link></span>
                 </div>
               )
-            }
-            return(
-              <div style={{paddingTop:'20px',paddingBottom:'20px',marginTop:'30px',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16'}}>
-                  <Card>
-                        { htmlToReactParser.parse(eachQuestion.htmlMarkUp) }
-                  </Card>
-              </div>
-            )
-
-              {/*<div style={{paddingTop:'20px',paddingBottom:'20px',marginTop:'30px',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16'}}>
-                <hr/>
-                <span className='large-text'>Question</span>
-                <div>
-                  {eachQuestion.question}
-                </div>
-                <span className='large-text'>Answer</span>
-                <div>
-
-                </div>
-                <div>
-                  <button onClick={()=>{this.handleEdit(index)}}>Edit</button>
-                </div>
-              </div>*/ }
           })
         }
-      {/*<div style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
-          <div className='m-t-2'>
-            <button onClick={()=>{this.handleAddQuestion()}}>Add another Question</button>
-          </div>
-          <div className='m-t-2'>
-            <button onClick={()=>{this.handlePostToAPI()}}>Post</button>
-          </div>
-        </div>*/}
       </div>
       </div>
-    );
+    )
   }
 }
 
