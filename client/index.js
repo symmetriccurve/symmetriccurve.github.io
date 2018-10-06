@@ -25,7 +25,7 @@ ReactDOM.render(
 	<HashRouter>
     <div>
       <div style={{width:'80%',marginLeft:'8%',paddingTop:'1%',marginRight:'3%',backgroundColor:'white'}}>
-        <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to="/">About</Link></span>
+        <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to="/">Resume</Link></span>
         <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to="/blog">Interview Questions</Link></span>
         <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to="/interviewQuestions">Blog</Link></span>
       </div>

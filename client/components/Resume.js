@@ -25,7 +25,7 @@ function PaperSheet(props) {
           Vikram Belde
         </Typography>
         <Typography component="h2" type="headline">
-          a Common Javascipt Developer with love for React EcoSystem !
+          a Common Javascipt Developer with love for React EcoSystem !!
         </Typography>
       </Paper>
     </div>
