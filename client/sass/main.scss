@@ -9,6 +9,30 @@
 
 }
 
+.makeItCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topSpace{
+  margin-top: 3%;
+}
+
+.same {
+  background-color: tan;
+  font-size: 20px;
+}
+
+.different {
+  background-color: lightgray;
+  font-size: 25px;
+}
+
+.column{
+    flex-direction: column;
+}
+
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */

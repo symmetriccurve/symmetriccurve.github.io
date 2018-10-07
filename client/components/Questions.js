@@ -91,10 +91,15 @@ class App extends React.Component {
 
   handleSearch(searchString){
     let { filteredQuestions, allQuestions } = this.state
+    let regexSearchString = searchString.toLowerCase().split(' ').length > 1 ? searchString.toLowerCase().split(' ').join('|') : searchString
+    let regex = new RegExp(regexSearchString,'g')
 
-    var results=_.filter(allQuestions,function(item){
-      return item.htmlMarkUp.indexOf(searchString)>-1;
-    });
+    var results = allQuestions.filter(eachQuestion=>{
+      return eachQuestion.htmlMarkUp.toLowerCase().match(regex)
+    })
+    // var results=_.filter(allQuestions,function(item){
+    //   return item.htmlMarkUp.toLowerCase().indexOf(searchString.toLowerCase())>-1;
+    // });
 
     if(searchString){
       console.log("results",results)
@@ -108,6 +113,19 @@ class App extends React.Component {
           filteredQuestions: this.state.allQuestions
         })
     }
+  }
+
+  generateSpan(){
+    let view = []
+    this.state.searchString.split(' ').map(eachWord=>{
+      if(eachWord == 'different'){
+        view.push(<span className='different'> {eachWord} </span>)
+        view.push(<span>{' '}</span>)
+      }else{
+        view.push(<span className='same'> {eachWord} </span>)
+      }
+    })
+    return view
   }
 
   render() {
@@ -126,13 +144,20 @@ class App extends React.Component {
                               <Link to={"/moreinfo/"+eachQuestion.id} params={{ id: eachQuestion.id }}><IconFont type="icon-tuichu" style={{fontSize: '30px'}}/> </Link>
                           </div>
                     </Card>
-
-                    {/*  <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to={"/moreinfo/"+eachQuestion.id} params={{ id: eachQuestion.id }}>Question Link</Link></span> */}
                 </div>
               )
           })
         }
+        {/*
+          // this.generateSpan()
+      */  }
       </div>
+        {/*<div style={{postion:'absolute'}}>
+          <input style={{postion:'absolute'}} />
+          <div style={{postion:'absolute'}}>
+              <span>hello</span>
+          </div>
+        </div> */}
       </div>
     )
   }

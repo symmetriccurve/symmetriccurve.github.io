@@ -7,6 +7,7 @@ import Blog from './components/Blog'
 import QuestionDetailCard from './components/QuestionDetailCard'
 import EditQuestion from './components/EditQuestion'
 import NewQuestion from './components/NewQuestion'
+import Training from './components/Training'
 import { Button } from 'antd'
 import 'antd/dist/antd.css'
 require('./sass/main.scss')
@@ -55,6 +56,7 @@ ReactDOM.render(
       <Route exact path="/blog" component={Blog} />
       <Route  path ={'/moreinfo/:id'} component={QuestionDetailCard}></Route>
       <Route  path ={'/moreinfo/:id/edit'} component={EditQuestion}></Route>
+      <Route  path ={'/training'} component={Training}></Route>
     </div>
   </HashRouter>
 </div>,
