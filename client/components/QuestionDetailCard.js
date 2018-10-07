@@ -82,12 +82,10 @@ class App extends React.Component {
   render() {
     const {question} = this.state
     return (
-      <div style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
-        <div style={{paddingTop:'20px',paddingBottom:'20px',marginTop:'30px',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.16'}}>
+      <div>
             <Card>
                   { question.htmlMarkUp && htmlToReactParser.parse(question.htmlMarkUp) }
             </Card>
-        </div>
       </div>
     );
   }
