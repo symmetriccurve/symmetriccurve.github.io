@@ -46,6 +46,13 @@ ReactDOM.render(
                 <Link to="/blog">Blog</Link>
             </Button>
         </span>
+        <span className='normal-text' style={{padding:'0 10px 0 10px'}}>
+            <Button style={{backgroundColor:'#222',border: 'none'}} type="primary">
+                <a href="http://www.belvikram.com/portfolio-2.0">
+                    New Portfolio Design Under Development !
+                </a>  
+            </Button>      
+        </span>
         {/*<span className='normal-text' style={{padding:'0 10px 0 10px'}}></span>
         <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to="/blog">Blog</Link></span>
         <span className='normal-text' style={{padding:'0 10px 0 10px'}}><Link to="/interviewQuestions">Interview Questions</Link></span> */ }
